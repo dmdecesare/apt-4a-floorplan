@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Apartment 4A — Floor Plan</title>
+<style>
+  :root {
+    --bg: #f5f1ea;
+    --ink: #2b2b2b;
+    --wall: #2b2b2b;
+    --accent: #6b7d6a;
+    --muted: #7d756a;
+    --living: #fbf6ec;
+    --kitchen: #eef4ec;
+    --bath: #eaf2f6;
+    --closet: #f2ece2;
+    --foyer: #f8f4ee;
+    --counter: #b8b8b8;
+    --stove: #3a3a3a;
+    --fridge: #cfcfcf;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    padding: 40px 20px;
+  }
+  .wrap { max-width: 1080px; margin: 0 auto; }
+  header { margin-bottom: 24px; }
+  h1 {
+    margin: 0 0 4px;
+    font-size: 26px;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+  }
+  .sub { color: var(--muted); font-size: 13px; }
+  .plan-card {
+    background: white;
+    border-radius: 14px;
+    padding: 28px;
+    box-shadow: 0 8px 28px rgba(0,0,0,0.06);
+  }
+  svg { width: 100%; height: auto; display: block; }
+  text {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, sans-serif;
+    fill: var(--ink);
+  }
+  .room-name { font-size: 11px; font-weight: 700; letter-spacing: 1.6px; fill: var(--accent); }
+  .room-dim  { font-size: 8.5px; fill: var(--muted); letter-spacing: 0.3px; }
+  .compass {
+    fill: var(--muted);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Apartment 4A</h1>
+      <div class="sub">Studio · 15' × 15' living room · prewar walk-up · empty</div>
+    </header>
+
+    <div class="plan-card">
+      <svg viewBox="0 0 640 380" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="parquet" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+            <rect width="20" height="20" fill="#e7d2a3" opacity="0.28"/>
+            <path d="M 0 0 L 20 0 L 20 10 L 0 10 Z" fill="none" stroke="#c9ab78" stroke-width="0.35" opacity="0.45"/>
+            <path d="M 10 0 L 10 20" stroke="#c9ab78" stroke-width="0.25" opacity="0.45"/>
+          </pattern>
+          <pattern id="hextile" x="0" y="0" width="9" height="9" patternUnits="userSpaceOnUse">
+            <rect width="9" height="9" fill="white"/>
+            <circle cx="4.5" cy="4.5" r="1" fill="#2b2b2b"/>
+          </pattern>
+          <pattern id="ktile" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse">
+            <rect width="14" height="14" fill="white"/>
+            <path d="M 0 14 L 14 14 M 14 0 L 14 14" stroke="#dcdcdc" stroke-width="0.5"/>
+          </pattern>
+          <clipPath id="apt-clip">
+            <path d="M 30 30 L 590 30 L 590 330 L 290 330 L 290 230 L 150 230 L 150 330 L 30 330 Z"/>
+          </clipPath>
+        </defs>
+
+        <!-- ===== ROOM FILLS ===== -->
+        <g clip-path="url(#apt-clip)">
+          <rect x="290" y="30"  width="300" height="300" fill="var(--living)"/>
+          <rect x="290" y="30"  width="300" height="300" fill="url(#parquet)"/>
+          <rect x="30"  y="30"  width="120" height="140" fill="var(--bath)"/>
+          <rect x="30"  y="30"  width="120" height="140" fill="url(#hextile)" opacity="0.5"/>
+          <rect x="150" y="30"  width="140" height="140" fill="var(--kitchen)"/>
+          <rect x="150" y="30"  width="140" height="140" fill="url(#ktile)" opacity="0.55"/>
+          <rect x="30"  y="170" width="60"  height="80"  fill="var(--closet)"/>
+          <rect x="30"  y="250" width="60"  height="80"  fill="var(--closet)"/>
+          <rect x="90"  y="170" width="60"  height="160" fill="var(--foyer)"/>
+          <rect x="150" y="170" width="140" height="60"  fill="var(--foyer)"/>
+        </g>
+
+        <!-- ===== INTERIOR WALLS ===== -->
+        <g stroke="var(--wall)" stroke-width="3" stroke-linecap="square">
+          <line x1="90"  y1="170" x2="90"  y2="190"/>
+          <line x1="90"  y1="230" x2="90"  y2="270"/>
+          <line x1="90"  y1="310" x2="90"  y2="330"/>
+          <line x1="30"  y1="250" x2="90"  y2="250"/>
+          <line x1="150" y1="30"  x2="150" y2="170"/>
+          <line x1="30"  y1="170" x2="100" y2="170"/>
+          <line x1="140" y1="170" x2="150" y2="170"/>
+          <line x1="150" y1="170" x2="190" y2="170"/>
+          <line x1="230" y1="170" x2="290" y2="170"/>
+          <line x1="150" y1="230" x2="150" y2="330"/>
+          <line x1="290" y1="30"  x2="290" y2="170"/>
+          <line x1="290" y1="230" x2="290" y2="330"/>
+        </g>
+
+        <!-- ===== OUTER WALLS ===== -->
+        <path d="M 30 30 L 590 30 L 590 330 L 290 330 L 290 230 L 150 230 L 150 330 L 30 330 Z"
+              fill="none" stroke="var(--wall)" stroke-width="6" stroke-linejoin="miter"/>
+
+        <!-- ===== DOORS (arc swings) ===== -->
+        <g stroke="#aaa" stroke-width="0.9" stroke-dasharray="3,3" fill="none">
+          <rect x="90" y="327" width="60" height="6" fill="white" stroke="none"/>
+          <path d="M 90 330 A 60 60 0 0 1 150 270"/>
+          <line x1="90" y1="330" x2="90" y2="270" stroke="var(--wall)" stroke-dasharray="0" stroke-width="2"/>
+
+          <rect x="100" y="167" width="40" height="6" fill="white" stroke="none"/>
+          <path d="M 100 170 A 40 40 0 0 0 140 210"/>
+          <line x1="100" y1="170" x2="100" y2="210" stroke="var(--wall)" stroke-dasharray="0" stroke-width="2"/>
+
+          <rect x="190" y="167" width="40" height="6" fill="white" stroke="none"/>
+          <path d="M 230 170 A 40 40 0 0 1 190 210"/>
+          <line x1="230" y1="170" x2="230" y2="210" stroke="var(--wall)" stroke-dasharray="0" stroke-width="2"/>
+
+          <rect x="87" y="190" width="6" height="40" fill="white" stroke="none"/>
+          <path d="M 90 190 A 40 40 0 0 1 130 230"/>
+          <line x1="90" y1="190" x2="130" y2="190" stroke="var(--wall)" stroke-dasharray="0" stroke-width="2"/>
+
+          <rect x="87" y="270" width="6" height="40" fill="white" stroke="none"/>
+          <path d="M 90 270 A 40 40 0 0 1 130 310"/>
+          <line x1="90" y1="270" x2="130" y2="270" stroke="var(--wall)" stroke-dasharray="0" stroke-width="2"/>
+        </g>
+
+        <!-- ===== ARCHED OPENING ===== -->
+        <g>
+          <rect x="284" y="170" width="12" height="60" fill="var(--living)"/>
+          <path d="M 290 170 Q 272 200 290 230" fill="none" stroke="var(--wall)" stroke-width="2"/>
+        </g>
+
+        <!-- ===== WINDOWS (north wall) ===== -->
+        <g>
+          <rect x="330" y="27" width="40" height="6" fill="#cfe7f5" stroke="var(--wall)" stroke-width="1.4"/>
+          <line x1="350" y1="27" x2="350" y2="33" stroke="white" stroke-width="1"/>
+          <rect x="410" y="27" width="40" height="6" fill="#cfe7f5" stroke="var(--wall)" stroke-width="1.4"/>
+          <line x1="430" y1="27" x2="430" y2="33" stroke="white" stroke-width="1"/>
+          <rect x="490" y="27" width="40" height="6" fill="#cfe7f5" stroke="var(--wall)" stroke-width="1.4"/>
+          <line x1="510" y1="27" x2="510" y2="33" stroke="white" stroke-width="1"/>
+          <rect x="70" y="27" width="40" height="6" fill="#cfe7f5" stroke="var(--wall)" stroke-width="1.4"/>
+          <rect x="230" y="27" width="40" height="6" fill="#cfe7f5" stroke="var(--wall)" stroke-width="1.4"/>
+        </g>
+
+        <!-- ===== BATHROOM FIXTURES ===== -->
+        <g>
+          <rect x="33" y="70" width="50" height="100" rx="8" fill="white" stroke="var(--wall)" stroke-width="1.4"/>
+          <rect x="33" y="156" width="50" height="14" fill="#e9e9e9" stroke="var(--wall)" stroke-width="0.6"/>
+          <circle cx="58" cy="163" r="2.2" fill="#888"/>
+
+          <rect x="115" y="33" width="30" height="14" fill="#e9e9e9" stroke="var(--wall)" stroke-width="0.7"/>
+          <ellipse cx="130" cy="58" rx="11" ry="9" fill="white" stroke="var(--wall)" stroke-width="1.1"/>
+
+          <rect x="120" y="120" width="28" height="30" rx="3" fill="#f0f0f0" stroke="var(--wall)" stroke-width="1.1"/>
+          <ellipse cx="134" cy="132" rx="11" ry="8" fill="white" stroke="var(--wall)" stroke-width="0.7"/>
+        </g>
+
+        <!-- ===== KITCHEN FIXTURES ===== -->
+        <g>
+          <rect x="153" y="80" width="14" height="83" fill="#e6efe6" stroke="#c2cfc2" stroke-width="0.5" stroke-dasharray="2,2" opacity="0.7"/>
+          <rect x="153" y="80" width="40" height="83" fill="var(--counter)" stroke="var(--wall)" stroke-width="1.1" opacity="0.55"/>
+          <rect x="153" y="33" width="47" height="47" fill="var(--fridge)" stroke="var(--wall)" stroke-width="1.4"/>
+          <line x1="153" y1="70" x2="200" y2="70" stroke="var(--wall)" stroke-width="0.6"/>
+          <rect x="157" y="90" width="32" height="36" rx="3" fill="#f0f0f0" stroke="var(--wall)" stroke-width="1"/>
+          <circle cx="173" cy="98" r="2.2" fill="#888"/>
+          <rect x="153" y="130" width="36" height="32" fill="var(--stove)" stroke="var(--wall)" stroke-width="1.1"/>
+          <circle cx="162" cy="138" r="2.2" fill="#777"/>
+          <circle cx="180" cy="138" r="2.2" fill="#777"/>
+          <circle cx="162" cy="154" r="2.2" fill="#777"/>
+          <circle cx="180" cy="154" r="2.2" fill="#777"/>
+        </g>
+
+        <!-- ===== RADIATOR + SCONCES ===== -->
+        <g>
+          <rect x="320" y="33" width="220" height="14" fill="#e2e2e2" stroke="var(--wall)" stroke-width="0.7"/>
+          <g stroke="#bbb" stroke-width="0.55">
+            <line x1="340" y1="33" x2="340" y2="47"/>
+            <line x1="360" y1="33" x2="360" y2="47"/>
+            <line x1="380" y1="33" x2="380" y2="47"/>
+            <line x1="400" y1="33" x2="400" y2="47"/>
+            <line x1="420" y1="33" x2="420" y2="47"/>
+            <line x1="440" y1="33" x2="440" y2="47"/>
+            <line x1="460" y1="33" x2="460" y2="47"/>
+            <line x1="480" y1="33" x2="480" y2="47"/>
+            <line x1="500" y1="33" x2="500" y2="47"/>
+            <line x1="520" y1="33" x2="520" y2="47"/>
+          </g>
+          <g fill="#caa14a" stroke="var(--wall)" stroke-width="0.5">
+            <circle cx="370" cy="324" r="3.5"/>
+            <circle cx="510" cy="324" r="3.5"/>
+          </g>
+        </g>
+
+        <!-- ===== ROOM LABELS (minimal) ===== -->
+        <g text-anchor="middle">
+          <text x="90"  y="103" class="room-name">BATH</text>
+          <text x="90"  y="115" class="room-dim">6' × 7'</text>
+
+          <text x="220" y="103" class="room-name">KITCHEN</text>
+          <text x="220" y="115" class="room-dim">7' × 7'</text>
+
+          <text x="60" y="210" class="room-name" font-size="9">LINEN</text>
+          <text x="60" y="290" class="room-name" font-size="9">COAT</text>
+
+          <text x="120" y="254" class="room-dim">entry</text>
+          <text x="220" y="207" class="room-dim">hall</text>
+
+          <text x="395" y="216" class="room-name">LIVING / STUDIO</text>
+          <text x="395" y="228" class="room-dim">15' × 15'</text>
+        </g>
+
+        <!-- ===== COMPASS ===== -->
+        <g transform="translate(605, 350)">
+          <circle r="14" fill="white" stroke="var(--muted)" stroke-width="0.8"/>
+          <path d="M 0 -10 L 3 0 L 0 10 L -3 0 Z" fill="var(--accent)"/>
+          <text y="-16" text-anchor="middle" class="compass">N</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+</body>
+</html>
